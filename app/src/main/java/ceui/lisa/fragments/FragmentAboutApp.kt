@@ -7,7 +7,6 @@ import ceui.lisa.R
 import ceui.lisa.activities.TemplateActivity
 import ceui.lisa.databinding.FragmentAboutBinding
 import ceui.lisa.utils.Common
-import ceui.lisa.utils.PackageUtils
 import ceui.lisa.utils.Params
 import com.qmuiteam.qmui.skin.QMUISkinManager
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog.MenuDialogBuilder
@@ -45,18 +44,6 @@ class FragmentAboutApp : SwipeFragment<FragmentAboutBinding>() {
                 } catch (e: ActivityNotFoundException) {
                     Common.showToast("unable to find market app")
                 }
-            }
-            baseBind.goWeibo.setOnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.addCategory(Intent.CATEGORY_DEFAULT)
-                intent.addCategory(Intent.CATEGORY_BROWSABLE)
-                val weiboInstalled = PackageUtils.isSinaWeiboInstalled(context)
-                if (weiboInstalled) {
-                    intent.data = Uri.parse("sinaweibo://userinfo?uid=7062240999")
-                } else {
-                    intent.data = Uri.parse("https://weibo.com/u/7062240999")
-                }
-                startActivity(intent)
             }
             baseBind.goTelegram.setOnClickListener {
                 val uri = Uri.parse("https://t.me/joinchat/QBTiWBvo-jda7SEl4VgK-Q")
