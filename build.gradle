@@ -3,17 +3,19 @@
 buildscript {
     ext.kotlin_version = '1.8.0'
     repositories {
-        maven { url "https://jitpack.io" }
-        maven { url "https://repository.jboss.org/maven2" }
-        maven { url "https://plugins.gradle.org/m2/" }
-        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+        maven { url 'https://maven.aliyun.com/repository/central' }
         google()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://repository.jboss.org/maven2" }
+        maven { url "https://jitpack.io" }
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.1'
+        classpath 'com.android.tools.build:gradle:7.4.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.gms:google-services:4.3.15'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.4'
         classpath "org.jmailen.gradle:kotlinter-gradle:3.7.0"
 
         def nav_version = '2.4.1'
