@@ -49,6 +49,7 @@ import ceui.lisa.utils.Params;
 import ceui.lisa.utils.PixivSearchParamUtil;
 import ceui.lisa.utils.Settings;
 import ceui.lisa.utils.UserFolderNameUtil;
+import ceui.loxia.Client;
 
 import static android.app.Activity.RESULT_OK;
 import static android.provider.DocumentsContract.EXTRA_INITIAL_URI;
@@ -169,6 +170,7 @@ public class FragmentSettings extends SwipeFragment<FragmentSettingsBinding> {
                     Local.setSettings(Shaft.sSettings);
                     if (changed) {
                         Retro.refreshAppApi();
+                        Client.INSTANCE.reset();
                     }
                 }
             });
