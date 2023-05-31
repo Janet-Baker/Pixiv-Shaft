@@ -1,6 +1,7 @@
 *.iml
 .gradle
 /local.properties
+/.history
 .DS_Store
 build
 /captures

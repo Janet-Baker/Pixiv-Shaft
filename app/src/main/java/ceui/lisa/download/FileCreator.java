@@ -36,7 +36,7 @@ public class FileCreator {
             String temp4 = temp3.replace(":", DASH);
             return temp4.replace("*", DASH);
         } else {
-            return "untitle_" + System.currentTimeMillis() + ".png";
+            return "untitled_" + System.currentTimeMillis() + ".png";
         }
     }
 

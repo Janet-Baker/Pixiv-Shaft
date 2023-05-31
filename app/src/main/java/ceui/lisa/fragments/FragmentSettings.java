@@ -966,7 +966,7 @@ public class FragmentSettings extends SwipeFragment<FragmentSettingsBinding> {
                 @Override
                 public void onClick(View v) {
                     FileUtils.deleteAllInDir(LegacyFile.imageCacheFolder(mContext));
-                    Common.showToast("图片缓存清除成功！");
+                    Common.showToast(getString(R.string.success_clearImageCache));
                     baseBind.imageCacheSize.setText(FileUtils.getSize(LegacyFile.imageCacheFolder(mContext)));
                 }
             });
@@ -976,7 +976,7 @@ public class FragmentSettings extends SwipeFragment<FragmentSettingsBinding> {
                 @Override
                 public void onClick(View v) {
                     FileUtils.deleteAllInDir(LegacyFile.gifCacheFolder(mContext));
-                    Common.showToast("GIF缓存清除成功！", 2);
+                    Common.showToast(getString(R.string.success_clearGifCache), 2);
                     baseBind.gifCacheSize.setText(FileUtils.getSize(LegacyFile.gifCacheFolder(mContext)));
                 }
             });
@@ -1005,7 +1005,7 @@ public class FragmentSettings extends SwipeFragment<FragmentSettingsBinding> {
                                     IllustDownload.downloadBackupFile((BaseActivity<?>) mActivity, "Shaft-Backup.json", backupString, new Callback<Uri>() {
                                         @Override
                                         public void doSomething(Uri t) {
-                                            Common.showToast("备份成功 " + Settings.FILE_PATH_BACKUP);
+                                            Common.showToast(getString(R.string.backup_success) + Settings.FILE_PATH_BACKUP);
                                         }
                                     });
                                     dialog.dismiss();
@@ -1069,7 +1069,7 @@ public class FragmentSettings extends SwipeFragment<FragmentSettingsBinding> {
 
     private void setThemeName() {
         final int index = Shaft.sSettings.getThemeIndex();
-        baseBind.colorSelect.setText(FragmentColors.COLOR_NAMES[index]);
+        baseBind.colorSelect.setText(getString(FragmentColors.COLOR_NAME_CODES[index]));
     }
 
     private void updateIllustPathUI(){
@@ -1092,7 +1092,7 @@ public class FragmentSettings extends SwipeFragment<FragmentSettingsBinding> {
                 Uri uri = data.getData();
                 String fileString = new String(UriUtils.uri2Bytes(uri));
                 boolean restoreResult = BackupUtils.restoreBackups(mContext, fileString);
-                Common.showToast(restoreResult ? "还原成功" : "还原失败");
+                Common.showToast(restoreResult ? getString(R.string.restore_success) : getString(R.string.restore_failed));
             } catch (Exception e) {
                 e.printStackTrace();
             }
