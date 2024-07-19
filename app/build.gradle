@@ -12,8 +12,8 @@ android {
         applicationId "com.YoStarJP.MajSoul"
         minSdkVersion 26
         targetSdkVersion 33
-        versionCode 200140
-        versionName "2.5.5_GP"
+        versionCode 200153
+        versionName "2.7.3_GP"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
